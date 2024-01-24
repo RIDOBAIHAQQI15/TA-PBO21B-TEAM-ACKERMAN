@@ -10,6 +10,12 @@
             font-family: 'Arial', sans-serif;
             text-align: center;
             margin-top: 50px;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        h1 {
+            color: #3498db;
         }
 
         #question {
@@ -17,13 +23,31 @@
             margin-bottom: 20px;
         }
 
-        #answer {
-            font-size: 18px;
-            margin-top: 10px;
+        #answerInput {
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        #answerInput::placeholder {
+            color: #555;
         }
 
         #inputBox {
             margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
         }
     </style>
 </head>
@@ -37,80 +61,44 @@
         <button onclick="checkAnswer()">Cek Jawaban</button>
     </div>
 
+    <audio id="benarSound" src="benar.mp3"></audio>
+    <audio id="salahSound" src="salah.mp3"></audio>
+
     <script>
         function generateQuestion() {
-            // Menghasilkan dua angka acak antara 1 dan 10
             let number1 = Math.floor(Math.random() * 10) + 1;
             let number2 = Math.floor(Math.random() * 10) + 1;
 
-            // Menetapkan pertanyaan ke elemen dengan ID "question"
             document.getElementById('question').innerHTML = `Berapa ${number1} + ${number2}?`;
 
-            // Menyimpan jawaban yang benar dalam variabel global
             correctAnswer = number1 + number2;
         }
 
-        function checkAnswer() {
-            // Mendapatkan jawaban dari input pengguna
-            let userAnswer = document.getElementById('answerInput').value;
+        function playCorrectSound() {
+            document.getElementById('benarSound').play();
+        }
 
-            // Mengonversi jawaban pengguna menjadi angka
+        function playWrongSound() {
+            document.getElementById('salahSound').play();
+        }
+
+        function checkAnswer() {
+            let userAnswer = document.getElementById('answerInput').value;
             userAnswer = parseInt(userAnswer);
 
-            // Memeriksa apakah jawaban pengguna benar
             if (userAnswer === correctAnswer) {
+                playCorrectSound();
                 alert('Jawaban Benar! 🎉');
             } else {
+                playWrongSound();
                 alert('Jawaban Salah. Coba lagi! 🤔');
             }
 
-            // Menghasilkan pertanyaan baru setelah pengecekan jawaban
             generateQuestion();
         }
 
-        // Pertama kali memanggil generateQuestion untuk memulai permainan
         generateQuestion();
     </script>
-
-     <!-- Penambahan elemen audio -->
-     <audio id="correctSound" src="benar.mp3"></audio>
-     <audio id="wrongSound" src="salah.mp3"></audio>
- 
-     <script>
-         function generateQuestion() {
-             let number1 = Math.floor(Math.random() * 10) + 1;
-             let number2 = Math.floor(Math.random() * 10) + 1;
- 
-             document.getElementById('question').innerHTML = `Berapa ${number1} + ${number2}?`;
- 
-             correctAnswer = number1 + number2;
-         }
- 
-         function playCorrectSound() {
-             document.getElementById('correctSound').play();
-         }
- 
-         function playWrongSound() {
-             document.getElementById('wrongSound').play();
-         }
- 
-         function checkAnswer() {
-             let userAnswer = document.getElementById('answerInput').value;
-             userAnswer = parseInt(userAnswer);
- 
-             if (userAnswer === correctAnswer) {
-                 alert('Jawaban Benar! 🎉');
-                 playCorrectSound();
-             } else {
-                 alert('Jawaban Salah. Coba lagi! 🤔');
-                 playWrongSound();
-             }
- 
-             generateQuestion();
-         }
- 
-         generateQuestion();
-     </script>
 </body>
 
 </html>
