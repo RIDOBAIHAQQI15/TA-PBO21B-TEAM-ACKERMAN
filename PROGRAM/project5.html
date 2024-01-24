@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Pengurangan</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #333;
+        }
+
+        h1 {
+            color: #3498db;
+        }
+
+        #question {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #answerInput {
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        #answerInput::placeholder {
+            color: #555;
+        }
+
+        #inputBox {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Game Pengurangan untuk Anak-Anak</h1>
+
+    <div id="question"></div>
+    <div id="inputBox">
+        <input type="text" id="answerInput" placeholder="Jawaban">
+        <button onclick="checkAnswer()">Cek Jawaban</button>
+    </div>
+
+    <audio id="correctSound" src="benar.mp3"></audio>
+    <audio id="wrongSound" src="salah.mp3"></audio>
+
+    <script>
+        function generateQuestion() {
+            let number1 = Math.floor(Math.random() * 10) + 1;
+            let number2 = Math.floor(Math.random() * 10) + 1;
+
+            // Pastikan number1 selalu lebih besar atau sama dengan number2
+            if (number2 > number1) {
+                [number1, number2] = [number2, number1];
+            }
+
+            document.getElementById('question').innerHTML = `Berapa ${number1} - ${number2}?`;
+
+            correctAnswer = number1 - number2;
+        }
+
+        function playCorrectSound() {
+            document.getElementById('correctSound').play();
+        }
+
+        function playWrongSound() {
+            document.getElementById('wrongSound').play();
+        }
+
+        function checkAnswer() {
+            let userAnswer = document.getElementById('answerInput').value;
+            userAnswer = parseInt(userAnswer);
+
+            if (userAnswer === correctAnswer) {
+                playCorrectSound();
+                alert('Jawaban Benar! 🎉');
+            } else {
+                playWrongSound();
+                alert('Jawaban Salah. Coba lagi! 🤔');
+            }
+
+            generateQuestion();
+        }
+
+        generateQuestion();
+    </script>
+</body>
+
+</html>
