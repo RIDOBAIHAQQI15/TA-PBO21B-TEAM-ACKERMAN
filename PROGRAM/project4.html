@@ -71,6 +71,46 @@
         // Pertama kali memanggil generateQuestion untuk memulai permainan
         generateQuestion();
     </script>
+
+     <!-- Penambahan elemen audio -->
+     <audio id="correctSound" src="benar.mp3"></audio>
+     <audio id="wrongSound" src="salah.mp3"></audio>
+ 
+     <script>
+         function generateQuestion() {
+             let number1 = Math.floor(Math.random() * 10) + 1;
+             let number2 = Math.floor(Math.random() * 10) + 1;
+ 
+             document.getElementById('question').innerHTML = `Berapa ${number1} + ${number2}?`;
+ 
+             correctAnswer = number1 + number2;
+         }
+ 
+         function playCorrectSound() {
+             document.getElementById('correctSound').play();
+         }
+ 
+         function playWrongSound() {
+             document.getElementById('wrongSound').play();
+         }
+ 
+         function checkAnswer() {
+             let userAnswer = document.getElementById('answerInput').value;
+             userAnswer = parseInt(userAnswer);
+ 
+             if (userAnswer === correctAnswer) {
+                 alert('Jawaban Benar! 🎉');
+                 playCorrectSound();
+             } else {
+                 alert('Jawaban Salah. Coba lagi! 🤔');
+                 playWrongSound();
+             }
+ 
+             generateQuestion();
+         }
+ 
+         generateQuestion();
+     </script>
 </body>
 
 </html>
