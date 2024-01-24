@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belajar Angkaa</title>
+  <style>
+   
+   .tombol {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+   }
+    .huruf-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 150px;
+      
+    }
+
+    .huruf {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #fff;
+      background-color: #3498db;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .huruf:hover {
+      background-color: #2980b9;
+    }
+
+    .nama {
+      margin-top: 10px;
+      font-size: 0.8em;
+    }
+    .txt_component
+        {
+            margin-left: 350px;
+            height: 35px;
+            width: 50%;
+            justify-content: center;
+            align-items: center;
+        }
+        .background
+      {
+        background-image:url(bck.jpg);
+      }
+        
+  </style>
+</head>
+<body class="background">
+  <div class="txt_component"><h1> Marii Belajar Huruf Dann Caraa Penyebutannyaa</h1></div>
+  <div class="huruf-container" class="tombol">
+
+    <button class="huruf" onclick="A('A')" id="A">A-a<div class="nama">A</button></button>
+    <button class="huruf" onclick="B('B')" id="B">B-b<div class="nama">be</button></button>
+    <button class="huruf" onclick="C('C')" id="C">C-c<div class="nama">ce</button></button>
+    <button class="huruf" onclick="D('D')" id="D">D-d<div class="nama">de</button></button>
+    <button class="huruf" onclick="E('E')" id="E">E-e<div class="nama">e</button></button>
+    <button class="huruf" onclick="F('F')" id="F">F-f<div class="nama">ef</button></button>
+    <button class="huruf" onclick="G('G')" id="G">G-g<div class="nama">ge</button></button>
+    <button class="huruf" onclick="H('H')" id="H">H-h<div class="nama">ha</button></button>
+    <button class="huruf" onclick="I('I')" id="I">I-i<div class="nama">i</button></button>
+    <button class="huruf" onclick="J('J')" id="J">J-j<div class="nama">je</button></button>
+    <button class="huruf" onclick="K('K')" id="K">K-k<div class="nama">ka</button></button>
+    <button class="huruf" onclick="L('L')" id="L">L-l<div class="nama">el</button></button>
+    <button class="huruf" onclick="M('M')" id="M">M-m<div class="nama">em</button></button>
+    <button class="huruf" onclick="N('N')" id="N">N-n<div class="nama">n</button></button>
+    <button class="huruf" onclick="O('O')" id="O">O-o<div class="nama">o</button></button>
+    <button class="huruf" onclick="P('P')" id="P">P-p<div class="nama">pe</button></button>
+    <button class="huruf" onclick="Q('Q')" id="Q">Q-q<div class="nama">kiu</button></button>
+    <button class="huruf" onclick="R('R')" id="R">R-r<div class="nama">er</button></button>
+    <button class="huruf" onclick="S('S')" id="S">S-s<div class="nama">es</button></button>
+    <button class="huruf" onclick="T('T')" id="T">T-t<div class="nama">te</button></button>
+    <button class="huruf" onclick="U('U')" id="U">U-u<div class="nama">u</button></button>
+    <button class="huruf" onclick="V('V')" id="V">V-v<div class="nama">ve</button></button>
+    <button class="huruf" onclick="W('W')" id="W">W-w<div class="nama">we</button></button>
+    <button class="huruf" onclick="X('X')" id="X">X-x<div class="nama">eks</button></button>
+    <button class="huruf" onclick="Y('Y')" id="Y">Y-y<div class="nama">ye</button></button>
+    <button class="huruf" onclick="Z('Z')" id="Z">Z-z<div class="nama">zet</button></button>
+  </button>
+
+  <script>
+    function tampilkanNama(angka) {
+      alert('Nama: ' + angka);
+      // Anda dapat mengganti alert dengan logika atau aksi lain yang diinginkan.
+    }
+    function A() {
+      let audio = new Audio("A.mp3");
+      audio.play()
+    }
+    
+  function B() {
+    var audio = new Audio('B.mp3');
+    audio.play();
+  }
+  function C() {
+    var audio = new Audio('C.mp3');
+    audio.play();
+  }
+  function D() {
+    var audio = new Audio('D.mp3');
+    audio.play();
+  }
+  function E() {
+    var audio = new Audio('E.mp3');
+    audio.play();
+  }
+  function F() {
+    var audio = new Audio('F.mp3');
+    audio.play();
+  }
+  function G() {
+    var audio = new Audio('G.mp3');
+    audio.play();
+  }
+  function H() {
+    var audio = new Audio('H.mp3');
+    audio.play();
+  }
+  function I() {
+    var audio = new Audio('I.mp3');
+    audio.play();
+  }
+  function J() {
+    var audio = new Audio('J.mp3');
+    audio.play();
+  }
+  function K() {
+    var audio = new Audio('K.mp3');
+    audio.play();
+  }
+  function L() {
+    var audio = new Audio('L.mp3');
+    audio.play();
+  }
+  function M() {
+    var audio = new Audio('M.mp3');
+    audio.play();
+  }
+  function N() {
+    var audio = new Audio('N.mp3');
+    audio.play();
+  }
+  function O() {
+    var audio = new Audio('O.mp3');
+    audio.play();
+  }
+  function P() {
+    var audio = new Audio('P.mp3');
+    audio.play();
+  }
+  function Q() {
+    var audio = new Audio('Q.mp3');
+    audio.play();
+  }
+  function R() {
+    var audio = new Audio('R.mp3');
+    audio.play();
+  }
+  function S() {
+    var audio = new Audio('S.mp3');
+    audio.play();
+  }
+  function T() {
+    var audio = new Audio('T.mp3');
+    audio.play();
+  }
+  function U() {
+    var audio = new Audio('U.mp3');
+    audio.play();
+  }
+  function V() {
+    var audio = new Audio('V.mp3');
+    audio.play();
+  }
+  function W() {
+    var audio = new Audio('W.mp3');
+    audio.play();
+  }
+  function X() {
+    var audio = new Audio('X.mp3');
+    audio.play();
+  }
+  function Y() {
+    var audio = new Audio('Y.mp3');
+    audio.play();
+  }
+  function Z() {
+    var audio = new Audio('Z.mp3');
+    audio.play();
+  }
+
+  </script>
+</body>
+</html>
