@@ -6,85 +6,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Belajar Huruf dan Angkaa</title>
     <style>
-
-        .txt_component
-        {
-            margin-left: 540px;
+        .txt_component {
+            margin-left: 10%;
             height: 35px;
-            width: 50%;
+            width: 80%;
+            text-align: center;
         }
 
-        .btn_component
-        {
+        .btn_component,
+        .btn2_component,
+        .ig {
             background-color: #FF0000;
             color: #FFFFFF;
             border-radius: 25px;
             border: 1px solid #FF0000;
             outline: 0;
-            width: 125px;
+            width: 80%;
             height: 35px;
-            margin-left: 600px;
-            display: flex;
-          
-        }
-        .btn2_component
-        {
-            background-color: #FF0000;
-            color: #FFFFFF;
-            border-radius: 25px;
-            border: 1px solid #FF0000;
-            outline: 0;
-            width: 125px;
-            height: 35px;
-            margin-left: 600px;
+            margin: 10px auto;
             display: flex;
         }
-        .ig
-        {
-            margin-left: 100px;
-            background-color: #FF0000;
-            color: #FFFFFF;
-            border-radius: 25px;
-            border: 1px solid #FF0000;
-            outline: 0;
-            width: 125px;
-            height: 35px;
-            margin-left: 600px;
 
+        .ig {
+            margin-left: 10%;
         }
 
-        
+        @media screen and (min-width: 600px) {
+            /* Adjust styles for screens wider than 600px */
+            .txt_component {
+                margin-left: 20%;
+                width: 60%;
+            }
+
+            .btn_component,
+            .btn2_component,
+            .ig {
+                width: 50%;
+            }
+
+            .ig {
+                margin-left: 25%;
+            }
+        }
     </style>
 </head>
 <body>
     <main>
-       <section>
-        <h1 class="txt_component">Belajar Huruf dan Angka</h1>
+        <section>
+            <h1 class="txt_component">Belajar Huruf dan Angka</h1>
         </section>
         
         <section>
             <button id="btn_huruf" class="btn_component" onclick="showLetter()">Tampilkan Huruf</button>
             <p id="letter" class="hidden"></p>
         </section>
+        
         <section>
             <button id="btn_angka" class="btn2_component" onclick="showNumber()">Tampilkan Angka</button>
             <p id="number" class="hidden"></p>
-           
         </section>
+        
         <section>
             <bottom id="ig" class="ig"> Pertambahan</bottom>
         </section>
     </main>
     <script>
-        btn_huruf.addEventListener("click",function(){
-        location.href="project2.html";
+        btn_huruf.addEventListener("click", function() {
+            location.href = "project2.html";
         })
 
-        btn_angka.addEventListener("click",function(){
-        location.href="project3.html";
-        ig,addEventListener("click")
+        btn_angka.addEventListener("click", function() {
+            location.href = "project3.html";
+            ig.addEventListener("click")
         })
-
-     </script>
+    </script>
 </body>
 </html>
