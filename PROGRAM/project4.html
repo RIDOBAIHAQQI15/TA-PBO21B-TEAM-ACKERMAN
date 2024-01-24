@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Pertambahan</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #question {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #answer {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        #inputBox {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Game Pertambahan untuk Anak-Anak</h1>
+
+    <div id="question"></div>
+    <div id="inputBox">
+        <input type="text" id="answerInput" placeholder="Jawaban">
+        <button onclick="checkAnswer()">Cek Jawaban</button>
+    </div>
+
+    <script>
+        function generateQuestion() {
+            // Menghasilkan dua angka acak antara 1 dan 10
+            let number1 = Math.floor(Math.random() * 10) + 1;
+            let number2 = Math.floor(Math.random() * 10) + 1;
+
+            // Menetapkan pertanyaan ke elemen dengan ID "question"
+            document.getElementById('question').innerHTML = `Berapa ${number1} + ${number2}?`;
+
+            // Menyimpan jawaban yang benar dalam variabel global
+            correctAnswer = number1 + number2;
+        }
+
+        function checkAnswer() {
+            // Mendapatkan jawaban dari input pengguna
+            let userAnswer = document.getElementById('answerInput').value;
+
+            // Mengonversi jawaban pengguna menjadi angka
+            userAnswer = parseInt(userAnswer);
+
+            // Memeriksa apakah jawaban pengguna benar
+            if (userAnswer === correctAnswer) {
+                alert('Jawaban Benar! 🎉');
+            } else {
+                alert('Jawaban Salah. Coba lagi! 🤔');
+            }
+
+            // Menghasilkan pertanyaan baru setelah pengecekan jawaban
+            generateQuestion();
+        }
+
+        // Pertama kali memanggil generateQuestion untuk memulai permainan
+        generateQuestion();
+    </script>
+</body>
+
+</html>
